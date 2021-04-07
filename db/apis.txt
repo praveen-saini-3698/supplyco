@@ -1,0 +1,12 @@
+					
+					
+	Module	Submodule	Admin	Webportal	Mobile App
+	Admin   User Roles
+            GetAllUserRoles
+            GetUserRolesByID
+            EditUserRoles
+            DeleteUserRoles
+            SelectUserRolesByParameters
+
+
+
