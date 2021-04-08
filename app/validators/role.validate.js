@@ -8,7 +8,13 @@ const loginValidation = {
     password: Joi.string()
       .regex(/[a-zA-Z0-9]{3,30}/)
       .required(),
-  }),
+  })
 }
 
-module.exports.validate = validate(loginValidation, {}, {});
+const getRolesByIdValidator = {
+  params: Joi.object({
+    id: Joi.number().required()
+  })
+};
+
+exports.getRolesByIdValidator = validate(getRolesByIdValidator, {}, {});
