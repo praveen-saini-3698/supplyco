@@ -17,4 +17,15 @@ const getRolesByIdValidator = {
   })
 };
 
+
+const editUserRoleValidator = {
+  body: Joi.object({
+    roleId: Joi.number().required(),
+    roleName: Joi.string().required(),
+    modifiedBy: Joi.string().required(),
+    isActive: Joi.number()
+  })
+};
+
 exports.getRolesByIdValidator = validate(getRolesByIdValidator, {}, {});
+exports.editUserRoleValidator = validate(editUserRoleValidator, {}, {});

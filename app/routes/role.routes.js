@@ -5,8 +5,8 @@ module.exports = app => {
   const router = require("express").Router();
 
   // Retrieve all Tutorials
-  router.get("/GetAllUserRoles", roles.findAll);
-  router.get("/GetUserRolesByID/:id", validator.getRolesByIdValidator, roles.findById);
+  router.get("/getAllUserRoles", roles.findAll);
+  router.post("/editUserRoles", validator.editUserRoleValidator, roles.editUserRoles);
 
   app.use('/api/roles', router);
 };

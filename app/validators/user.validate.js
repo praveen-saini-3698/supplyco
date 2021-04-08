@@ -11,4 +11,19 @@ const loginValidation = {
   }),
 }
 
-module.exports.validate = validate(loginValidation, {}, {});
+const userIdValidator = {
+  params: Joi.object({
+    userId: Joi.number().required()
+  })
+};
+
+const editUserRoleValidator = {
+  body: Joi.object({
+    roleId: Joi.number().required(),
+    userId: Joi.number().required(),
+    modifiedBy: Joi.string().required()
+  })
+};
+
+exports.userIdValidator = validate(userIdValidator, {}, {});
+exports.editUserRoleValidator = validate(editUserRoleValidator, {}, {});
