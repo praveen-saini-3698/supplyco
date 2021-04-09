@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const handler = require("./app/response-handler/handler");
 const { ValidationError } = require('express-validation')
 const app = express();
 
@@ -36,7 +37,7 @@ app.listen(PORT, () => {
 
 app.use((err, _req, res, _next) => {
   if (err instanceof ValidationError) {
-    return res.status(err.statusCode).json(err)
+    return res.status(err.statusCode).json(err);
   }
-  return res.status(500).json(err)
+  return handler.error(res, err);
 });

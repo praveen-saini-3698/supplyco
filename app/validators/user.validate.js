@@ -25,5 +25,15 @@ const editUserRoleValidator = {
   })
 };
 
+const userParamValidator = {
+  body: Joi.object({
+    userId: Joi.number(),
+    userName: Joi.string(),
+    userContactNumber: Joi.number(),
+    userEmail: Joi.string().regex(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)
+  })
+};
+
 exports.userIdValidator = validate(userIdValidator, {}, {});
 exports.editUserRoleValidator = validate(editUserRoleValidator, {}, {});
+exports.userParamValidator = validate(userParamValidator, {}, {});

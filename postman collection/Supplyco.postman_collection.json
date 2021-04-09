@@ -1,0 +1,226 @@
+{
+	"info": {
+		"_postman_id": "577e0d5f-6999-46e3-a169-75335697c973",
+		"name": "Supplyco",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "selectUserRolesByParameters",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "userId",
+							"value": "1",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "userName",
+							"value": "amruta",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "userContactNumber",
+							"value": "25478965",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "userEmail",
+							"value": "ammu@gmail.com",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/users/selectUserRolesByParameters",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"selectUserRolesByParameters"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "editUserRoles",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "roleId",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "userId",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "modifiedBy",
+							"value": "Aret",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/users/editUserRoles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"editUserRoles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUserRolesByID/:{id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/users/getUserRolesByID/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"getUserRolesByID",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUserAllRoles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/users/getUserAllRoles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"getUserAllRoles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllUserRoles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/roles/getAllUserRoles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"roles",
+						"getAllUserRoles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "editUserRoles",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "roleId",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "roleName",
+							"value": "Admin",
+							"type": "text"
+						},
+						{
+							"key": "modifiedBy",
+							"value": "Arnav",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/roles/editUserRoles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"roles",
+						"editUserRoles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "allUsers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/users/allUsers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"allUsers"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
