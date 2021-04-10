@@ -3,6 +3,24 @@ const handler = require("../response-handler/handler");
 const Users = db.users;
 const Roles = db.roles;
 const Op = db.Sequelize.Op;
+const jwt = require("jsonwebtoken");
+const MD5 = require("md5");
+const dotenv = require("dotenv");
+const atob = require("atob");
+dotenv.config();
+
+exports.login = async (req, res) => {
+  try {
+    const userName = req.body.userName;
+    const password = MD5(atob(req.body.password));
+    const t = Number(process.env.TOKEN_LIFE) + 's';
+    const token = jwt.sign(userName, process.env.TOKEN_SECRET);
+    data = { token };
+    return handler.success(res, data);
+  } catch (error) {
+    return handler.error(res, error);
+  }
+};
 
 // Retrieve all Userss from the database.
 exports.findAllActiveUsers = async (req, res) => {

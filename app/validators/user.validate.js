@@ -1,16 +1,5 @@
 const { validate, Joi } = require('express-validation')
 
-const loginValidation = {
-  body: Joi.object({
-    email: Joi.string()
-      .email()
-      .required(),
-    password: Joi.string()
-      .regex(/[a-zA-Z0-9]{3,30}/)
-      .required(),
-  }),
-}
-
 const userIdValidator = {
   params: Joi.object({
     userId: Joi.number().required()
@@ -34,6 +23,14 @@ const userParamValidator = {
   })
 };
 
+const loginValidator = {
+  body: Joi.object({
+    userName: Joi.string().required(),
+    password: Joi.string().required()
+  })
+}
+
 exports.userIdValidator = validate(userIdValidator, {}, {});
 exports.editUserRoleValidator = validate(editUserRoleValidator, {}, {});
 exports.userParamValidator = validate(userParamValidator, {}, {});
+exports.loginValidator = validate(loginValidator, {}, {});
