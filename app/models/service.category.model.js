@@ -1,35 +1,20 @@
 module.exports = (sequelize, Sequelize) => {
-    const User = sequelize.define('User', {
+    const ServiceCategory = sequelize.define('ServiceCategory', {
         id: {
             field: 'id',
             autoIncrement: true,
             type: Sequelize.INTEGER,
             primaryKey: true
         },
-        first_name: {
+        category: {
             type: Sequelize.STRING(255),
             allowNull: false,
-            comment: 'fist name',
+            comment: 'category',
         },
-        last_name: {
-            type: Sequelize.STRING(255),
+        parent_category_id: {
+            type: Sequelize.INTEGER,
             allowNull: false,
             comment: 'last name',
-        },
-        email: {
-            type: Sequelize.STRING(255),
-            allowNull: true,
-            comment: 'Email',
-        },
-        password: {
-            type: Sequelize.STRING(255),
-            allowNull: true,
-            comment: 'password',
-        },
-        mobile_no: {
-            type: Sequelize.STRING(255),
-            allowNull: true,
-            comment: 'password',
         },
         created_by: {
             type: Sequelize.STRING(100),
@@ -48,12 +33,12 @@ module.exports = (sequelize, Sequelize) => {
             comment: 'status',
         }
     }, {
-        tableName: 'user',
-        comment: 'user base info',
+        tableName: 'service_category',
+        comment: 'service category info',
         createdAt: 'created_at',
         updatedAt: 'updated_at',
         charset: 'utf8',
         collate: 'utf8_general_ci',
     });
-    return User;
+    return ServiceCategory;
 };

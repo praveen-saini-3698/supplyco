@@ -1,12 +1,12 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const handler = require("./app/response-handler/handler");
+const handler = require("./app/handler/response.handler");
 const { ValidationError } = require('express-validation')
 const app = express();
 
 var corsOptions = {
-  origin: "http://localhost:8081"
+  origin: "http://localhost:4200"
 };
 
 app.use(cors(corsOptions));
@@ -26,7 +26,6 @@ app.get("/", (req, res) => {
   res.json({ message: "Welcome to bezkoder application." });
 });
 
-require("./app/routes/role.routes")(app);
 require("./app/routes/user.routes")(app);
 
 // set port, listen for requests

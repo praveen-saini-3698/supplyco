@@ -1,59 +1,59 @@
 module.exports = (sequelize, Sequelize) => {
-    const Roles = sequelize.define('RolePriviliges', {
+    const PermissionAssignment = sequelize.define('PermissionAssignment', {
         id: {
-            field: 'Role_Privileges_ID',
+            field: 'id',
             autoIncrement: true,
             type: Sequelize.INTEGER,
             primaryKey: true
         },
-        Role_ID: {
+        role_id: {
             type: Sequelize.INTEGER,
-            allowNull: true,
+            allowNull: false,
             comment: 'role id',
         },
-        Admin_Page_ID: {
-            type: Sequelize.INTEGER,
-            allowNull: true,
-            comment: 'admin page id',
-        },
-        Is_View_Enabled: {
+        can_create: {
             type: Sequelize.BOOLEAN,
             allowNull: false,
-            comment: 'Is View Enabled',
+            comment: 'can create permission'
         },
-        Is_Edit_Enabled: {
+        can_read: {
             type: Sequelize.BOOLEAN,
             allowNull: false,
-            comment: 'Is Edit Enabled',
+            comment: 'can read permission'
         },
-        Is_Delete_Enabled: {
+        can_update: {
             type: Sequelize.BOOLEAN,
             allowNull: false,
-            comment: 'Is Delete Enabled',
+            comment: 'can update permission'
         },
-        CreatedBy: {
+        can_delete: {
+            type: Sequelize.BOOLEAN,
+            allowNull: false,
+            comment: 'can delete permission'
+        },
+        created_by: {
             type: Sequelize.STRING(100),
             allowNull: true,
-            comment: 'Created By',
+            comment: 'created by',
         },
-        ModifiedBy: {
+        updated_by: {
             type: Sequelize.STRING(100),
             allowNull: true,
-            comment: 'Modified By',
+            comment: 'updated by',
         },
-        IsActive: {
+        status: {
             type: Sequelize.BOOLEAN,
             allowNull: false,
             defaultValue: 1,
-            comment: 'Is Active',
+            comment: 'status',
         }
     }, {
-        tableName: 'role_privileges',
-        comment: 'role privileges info',
-        createdAt: 'Created_Date',
-        updatedAt: 'Modified_Date',
+        tableName: 'permission_assignment',
+        comment: 'permission assignment info',
+        createdAt: 'created_at',
+        updatedAt: 'updated_at',
         charset: 'utf8',
         collate: 'utf8_general_ci',
     });
-    return Roles;
+    return PermissionAssignment;
 };
